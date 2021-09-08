@@ -161,8 +161,6 @@ h3 { font-size: var(--fs-h3)}
   opacity: 0.25;
 }
 
-.services {
-}
 
 .service {
   max-width: 500px;
@@ -214,6 +212,12 @@ h3 { font-size: var(--fs-h3)}
   margin: 0 auto;
 }
 
+@media (max-width: 630px){
+  .about-me__img {
+    display: none;
+  }
+}
+
 .about-me__img {
   box-shadow: var(--bs);
 }
@@ -255,6 +259,8 @@ h3 { font-size: var(--fs-h3)}
 }
 
 
+
+
 [class="col-md-3"] {
   padding-top: 4.0rem;
   padding-bottom: 4.0rem;
@@ -263,13 +269,26 @@ h3 { font-size: var(--fs-h3)}
 }
 
 .projects {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  justify-content: center;
+  justify-content: space-between;
   background-color: var(--clr-accent);
   max-height: 1500px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
   margin-bottom: 70px;
-  color: black;
 }
+
+/* @media (max-width: 1300px) {
+  .projects {
+    flex-direction: column;
+    justify-content: center;
+  }
+} */
 
 .project-heading {
   font-family: var(--ff-secondary);
@@ -278,7 +297,6 @@ h3 { font-size: var(--fs-h3)}
   text-align: center;
   margin-bottom: 0px;
 }
-
 
 .flip-card {
   background-color: transparent;
@@ -343,15 +361,8 @@ h3 { font-size: var(--fs-h3)}
 }
 
 
-/* poster  */
 
-.poster {
-  padding-top: 10px;
-  /* padding-bottom: 10px; */
-  padding-left: 40px;
-  padding-right: 250px;
-  max-height: 730px;
-}
+/* poster  */
 
 .poster-heading{
   background: black;
@@ -362,6 +373,15 @@ h3 { font-size: var(--fs-h3)}
   max-width: 600px;
 }
 
+@media (min-width: 1450px) {
+
+.poster {
+  padding-top: 10px;
+  /* padding-bottom: 10px; */
+  padding-left: 40px;
+  padding-right: 250px;
+  max-height: 730px;
+}
 
 .left-text{
   padding-top: 40px;
@@ -374,6 +394,12 @@ h3 { font-size: var(--fs-h3)}
   height: 600px;
 }
 
+.myposter {
+  max-width: 100%;
+  height: auto;
+}
+
+}
 
 
 
@@ -381,21 +407,69 @@ h3 { font-size: var(--fs-h3)}
 /* skills */
 
 .skills{
+  display: flex;
+  justify-content: center;
   background-color: var(--clr-accent);
   height: 600px;
-  padding-top: 65px;
-  padding-left: 320px;
 }
 
 
 /* coursera */
+
+@media (min-width: 1450px) {
+
 
 .coursera{
   background-color: white;
   height: 500px;
 }
 
+.right {
+ width: 100%;
+ height: auto;
+}
 
+.carousel-inner {
+  width: 100%;
+  height: auto;
+}
+
+/* 
+.indicators {
+  margin-right: 30px;
+} */
+
+
+.carousel-indicators {
+  top: 10px;
+  justify-content:center;
+  margin:0;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+.carousel .carousel-indicators li {  background-color: gray; }
+.carousel .carousel-indicators li.active { background-color: goldenrod; }
+
+
+.carousel-item.active{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+}
 
 
 
